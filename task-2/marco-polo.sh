@@ -1,11 +1,11 @@
 #!/bin/bash
 logDir="/home/zxy/codes/missing-semester/task-2/history.log"
 marco() {
-    echo "$(pwd)" > $logDir
+    pwd > $logDir
     echo "save pwd $(pwd)"
 }
 
 polo() {
-    cd $(cat $logDir)
+    cd "$(cat "$logDir")" || exit
     echo "change path to $(cat $logDir)"
 }
